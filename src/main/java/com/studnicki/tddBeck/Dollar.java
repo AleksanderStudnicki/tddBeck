@@ -10,4 +10,10 @@ public class Dollar {
     public Dollar times(int i) {
         return new Dollar(amount * i);
     }
+
+    @Override
+    public boolean equals(Object object){
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
+    }
 }
