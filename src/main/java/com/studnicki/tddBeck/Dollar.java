@@ -1,11 +1,13 @@
 package com.studnicki.tddBeck;
 
 public class Dollar {
-    public int amount = 10;
+    public int amount;
 
     public Dollar(int amount) {
+        this.amount = amount;
     }
 
-    public void times(int i) {
+    public Dollar times(int i) {
+        return new Dollar(amount * i);
     }
 }
