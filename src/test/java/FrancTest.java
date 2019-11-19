@@ -1,4 +1,4 @@
-import com.studnicki.tddBeck.Franc;
+import com.studnicki.tddBeck.Money.Franc;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
