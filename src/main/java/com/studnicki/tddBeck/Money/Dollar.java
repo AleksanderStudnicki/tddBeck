@@ -1,11 +1,12 @@
 package com.studnicki.tddBeck.Money;
 
 public class Dollar extends Money {
-    public Dollar(int amount) {
-        this.amount = amount;
+    Dollar(int amount, String currency) {
+        super(amount, currency);
     }
 
-    public Dollar times(int i) {
-        return new Dollar(amount * i);
+    public Money times(int multiplier) {
+        return Money.dollar(amount * multiplier);
     }
+
 }
