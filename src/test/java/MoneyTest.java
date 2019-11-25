@@ -1,12 +1,10 @@
-import com.studnicki.tddBeck.Money.Dollar;
-import com.studnicki.tddBeck.Money.Franc;
 import com.studnicki.tddBeck.Money.Money;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class DollarTest {
+public class MoneyTest {
     @Test
     public void testMultiplication(){
         Money five = Money.dollar(5);
