@@ -1,3 +1,5 @@
+import com.studnicki.tddBeck.Money.Bank;
+import com.studnicki.tddBeck.Money.Expression;
 import com.studnicki.tddBeck.Money.Money;
 import org.junit.Test;
 
@@ -28,5 +30,16 @@ public class MoneyTest {
     @Test
     public void testDifferentClassEquality(){
         assertEquals(new Money(10, "USD"), Money.dollar(10));
+    }
+
+    @Test
+    public void testSimpleAddition(){
+        Money five = Money.dollar(5);
+
+        Expression sum = five.plus(Money.dollar(5));
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum, "USD");
+
+        assertEquals(Money.dollar(10), reduced);
     }
 }

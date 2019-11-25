@@ -1,6 +1,6 @@
 package com.studnicki.tddBeck.Money;
 
-public class Money {
+public class Money implements Expression{
     protected int amount;
 
     protected String currency;
@@ -37,5 +37,9 @@ public class Money {
                 "amount=" + amount +
                 ", currency='" + currency + '\'' +
                 '}';
+    }
+
+    public Expression plus(Money money) {
+        return new Money(amount + money.amount, currency());
     }
 }
