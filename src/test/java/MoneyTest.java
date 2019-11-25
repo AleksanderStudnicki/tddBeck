@@ -4,6 +4,8 @@ import com.studnicki.tddBeck.Money.Money;
 import com.studnicki.tddBeck.Money.Sum;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -68,5 +70,18 @@ public class MoneyTest {
         Bank bank = new Bank();
         Money result = bank.reduce(Money.dollar(1), "USD");
         assertEquals(Money.dollar(1), result);
+    }
+
+    @Test
+    public void testReduceMoneyOfDifferentCurrency(){
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
+        assertEquals(Money.dollar(1), result);
+    }
+
+    @Test
+    public void testIdentityRate(){
+        assertEquals(1, new Bank().rate("USD", "USD"));
     }
 }
